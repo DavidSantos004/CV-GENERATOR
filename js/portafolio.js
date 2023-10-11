@@ -1,6 +1,40 @@
 import {env} from "./config.js";     
 const apiUrl = `${env.ssl + env.hotsName}:${env.port}/perfiles`;
 const perfilesContainer = document.getElementById("section-formularios")
+const search =document.getElementById("search")
+const formito = document.querySelector(".formularito")
+const input = document.querySelector(".form-control");
+const boton= document.querySelector("#boton_bsuqueda");
+
+addEventListener("DOMContentLoaded", async () =>{
+    formito.addEventListener('submit', async (e) => {
+        e.preventDefault()
+          let valor = input.value;
+          let res = await (await fetch(apiUrl)).json();
+          if ((valor) === res.id) {
+            console.log("hola")
+            perfilesContainer.innerHTML = `
+                 SUPAPA
+              `;
+          } else if (valor === "") {
+            perfilesContainer.innerHTML = "";
+            for (let i = 0; i < res.length; i++) {
+              perfilesContainer.insertAdjacentHTML(
+                "beforeend",
+                `
+                          SU PAPA
+                      `
+              );
+            }
+          } else {
+            perfilesContainer.innerHTML = "NO SE ENCONTRARON DATOS";
+          }
+        });
+    
+})
+
+//Buscar usuario
+
 
 
 //metodo GET
@@ -60,3 +94,4 @@ fetch(apiUrl)
 .catch((error)=>{
     console.error("Error", error)
 })
+
