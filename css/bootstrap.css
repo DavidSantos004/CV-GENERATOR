@@ -463,10 +463,11 @@ h5,
 }
 h6,
 .h6 {
-  font-size: 12px;
+  font-size: 16px;
 }
 p {
   margin: 0 0 10px;
+  font-size: 18px;
 }
 .lead {
   margin-bottom: 20px;
