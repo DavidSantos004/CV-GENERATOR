@@ -43,6 +43,9 @@ fetch(apiUrl)
                             <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">${perfil.email}</span></h6></div>
                             <div class="col-sm-6 py-2"><h6>Linkedin: <span class="text-secondary"><a href="${perfil.linkedin} ">Dale un vistazo :)</a></span></h6></div>
                             <div class="col-sm-6 py-2"><h6>Github: <span class="text-secondary"><a href="${perfil.github} ">Dale un vistazo :)</a></span></h6></div>
+                            <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                            <button type="button" class="btn btn-outline-danger">Editar</button>
+
                         </div>
                     </div>
                 </div>
