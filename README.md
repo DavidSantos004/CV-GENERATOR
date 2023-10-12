@@ -77,9 +77,31 @@ Json-Server ahora proporciona una API REST simulada basada en tu archivo db.json
 3. En el navegador en el apartado de `PORTAFOLIO` podras visualizar los portafolios ya echos por los usuarios
 4. en `PORTAFOLIO` tambien podras ver los botones de `Eliminar` y `Editar` dando click al respectivo boton hara su funcionalidad
 
+5. cuando uses el boton `Eliminar` se eliminara de la base de datos el CV donde estaba ese boton
+
+6. cuando uses el boton `Editar` se abrira un formulario en un modal en el cual se cargaran los datos ya existentes del CV del usuario. ahi podras cambiar los datos a tu antojo y como veas necesario 
+
 ## Capturas de Pantalla
 
-ya ahorita la pongo
+### Pagina Principal
+![](imgsReadme/captura1.png)
+
+### Formulario Principal
+![](imgsReadme/captura2.png)
+
+### Portafolios
+![](imgsReadme/captura3.png)
+
+### visualizacion de CV's
+![](imgsReadme/captura4.png)
+
+### Apartado de Contacto
+![](imgsReadme/captura5.png)
+
+### Visualizacion de formulario para editar CV
+![](imgsReadme/captura6.png)
+
+
 
 ## Contribución
 
