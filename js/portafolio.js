@@ -207,11 +207,10 @@ document.addEventListener('DOMContentLoaded', function () {
         //funciona porfissss
 }
 
-// Agrega un evento click a los botones de editar
+
 document.addEventListener('click', function (e) {
     if (e.target && e.target.id === 'editar') {
         console.log("aaaaaaaa")
-      // Obtén el ID del perfil que deseas editar
       const perfilId = e.target.getAttribute('data-id');
       console.log('Editar perfil con ID:', perfilId);
   
@@ -219,12 +218,43 @@ document.addEventListener('click', function (e) {
       const modal = document.getElementById('modal');
       modal.style.display = 'block';
   
-      // Aquí debes cargar los datos del usuario en el formulario de edición
-      // Puedes hacer una solicitud GET para obtener los datos del usuario y llenar el formulario
+      fetch(`${apiUrl}/${perfilId}`, {
+        method:"GET",
+        headers:{
+            'Content-Type': 'application/json',
+        },
+      })
+      .then((response)=>{
+        if (response.ok){
+            return response.json();
+        }
+        else{
+            throw new error(`No se pudo obtener los datos del usuario. Codigo de estado: ${response.status}`)
+        }
+      })
+      .then((usuario)=>{
+        document.getElementById('name_input').value = usuario.name
+        document.getElementById('email_input').value = usuario.email
+        document.getElementById('telephone_input').value = usuario.telephone
+        document.getElementById('subject_input').value = usuario.subject
+        document.getElementById('document_input').value = usuario.id
+        document.getElementById('image-url-input').value = usuario.imageUrl
+        document.getElementById('profesion').value = usuario.profesion
+        document.getElementById('estudios').value = usuario.estudios
+        console.log(usuario)
+        document.getElementById('yearsExperience').value = usuario.yearsExperience
+        document.getElementById('Birthday').value = usuario.birthday
+        document.getElementById('linkedin').value = usuario.linkedin
+        document.getElementById('github').value = usuario.github
+        document.getElementById('hoobies').value = usuario.hobbies
+        document.getElementById('Skills').value = usuario.skills
+        document.getElementById('message_input').value = usuario.message
+
+      })
     }
   });
   
-  // Agrega un evento click al botón de cerrar el modal
+ 
   document.addEventListener('click', function (e) {
     if (e.target && e.target.className === 'close') {
       const modal = document.getElementById('modal');
@@ -232,14 +262,50 @@ document.addEventListener('click', function (e) {
     }
   });
   
-  // Agrega un evento submit al formulario de edición
+  
   document.getElementById('editarForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    // Aquí debes enviar una solicitud PUT o POST al servidor para guardar los cambios en el usuario
-    // Puedes usar la función fetch para esto
-    // Una vez que se guarden los cambios, puedes cerrar el modal
-    const modal = document.getElementById('modal');
-    modal.style.display = 'none';
+
+    const updatedUserData={
+        id: document.getElementById('document_input').value ,
+        name: document.getElementById('name_input').value ,
+        email: document.getElementById('email_input').value,
+        telephone:document.getElementById('telephone_input').value , 
+        subject:document.getElementById('subject_input').value , 
+        imageUrl:document.getElementById('image-url-input').value ,
+        profesion:document.getElementById('profesion').value ,
+        yearsExperience:document.getElementById('yearsExperience').value ,
+        birthday:document.getElementById('Birthday').value ,
+        linkedin:document.getElementById('linkedin').value ,
+        github:document.getElementById('github').value ,
+        hobbies:document.getElementById('hoobies').value ,
+        skills:document.getElementById('Skills').value ,
+        message:document.getElementById('message_input').value 
+    }
+    const usuarioId = document.getElementById('document_input').value
+    fetch(`${apiUrl}/${usuarioId}`,{
+        method: 'PUT',
+        headers:{
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedUserData),
+    })
+    .then((response)=>{
+        if (response.ok){
+            console.log(`Datos del usuario con ID ${usuarioId} actualizados exitosamente.`);
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+        else{
+            throw new Error(`Error al actualizar los datos del usuario. Código de estado: ${response.status}`);
+        }
+    })
+    .catch((error) => {
+        console.error('Error al actualizar los datos del usuario:', error);
+      });
+
+
+    
   });
   
 
