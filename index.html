@@ -20,6 +20,7 @@
 
     <!-- Custom CSS -->
 	<link rel="stylesheet" href="css/main.css">
+	
     <link href="css/custom.css" rel="stylesheet">
 	
 	<script src="//use.edgefonts.net/bebas-neue.js"></script>
@@ -31,6 +32,38 @@
 	
 	<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 	<script src="js/main.js" type="module" defer></script>
+	<script>
+		function validarNumero(input) {
+			// Reemplaza cualquier carácter que no sea un número con una cadena vacía
+			input.value = input.value.replace(/[^0-9]/g, '');
+		}
+
+		document.addEventListener("DOMContentLoaded", function() {
+        const emailInput = document.getElementById("email_input");
+        const mensajeError = document.getElementById("mensajeError");
+
+        if (emailInput && mensajeError) {
+            emailInput.addEventListener("input", function() {
+                const email = emailInput.value;
+                if (isValidEmail(email)) {
+                    mensajeError.textContent = "Dirección de correo electrónico válida.";
+                    mensajeError.style.color = "green";
+                } else {
+                    mensajeError.textContent = "Dirección de correo electrónico no válida.";
+                    mensajeError.style.color = "red";
+                }
+            });
+        } else {
+            console.error("Los elementos no se encontraron en el DOM.");
+        }
+
+        function isValidEmail(email) {
+            const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return regex.test(email);
+        }
+    });
+	</script>
+
 	
 
 </head>
@@ -199,12 +232,14 @@
 					  </div>
 					  
 					  <div class="email">
-						<label for="email"></label>
-						<input type="email" placeholder="Correo Electronico" name="email" id="email_input" required>
-					  </div>
+						<label for="email" ></label>
+						<input type="email" placeholder="Correo Electronico" name="email" id="email_input" onblur="validarEmail(this)" required>
+						<p id="mensajeError"></p>
+					</div>
 					  <div class="telephone">
 						<label for="name"></label>
-						<input type="text" placeholder="Numero Celular" name="telephone" id="telephone_input" required>
+						<input type="text" placeholder="Numero Celular" name="telephone" id="telephone_input" oninput="validarNumero(this)" required>
+						
 					  </div>
 					  <div class="telephone">
 						<div class="subject">
@@ -219,7 +254,7 @@
 						
 						  <div class="document">
 							<label for="document"></label>
-							<input type="text" placeholder="Número de Documento" name="document" id="document_input" required>
+							<input type="text" placeholder="Número de Documento" name="document" id="document_input" oninput="validarNumero(this)" required>
 						</div>
 						<div class="image-url">
 							<label for="image-url">Una imagen tuya:</label>
