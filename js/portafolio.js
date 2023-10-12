@@ -154,7 +154,7 @@ fetch(apiUrl)
                             <div class="col-sm-6 py-2"><h6>Linkedin: <span class="text-secondary"><a href="${perfil.linkedin} ">Dale un vistazo :)</a></span></h6></div>
                             <div class="col-sm-6 py-2"><h6>Github: <span class="text-secondary"><a href="${perfil.github} ">Dale un vistazo :)</a></span></h6></div>
                             <button type="button" class="btn btn-outline-danger" data-id="${perfil.id}" id="eliminar">Eliminar</button>
-                            <button type="button" class="btn btn-outline-danger" data-id="${perfil.id}" id="eliminar">Editar</button>
+                            <button type="button" class="btn btn-outline-danger" data-id="${perfil.id}" id="editar">Editar</button>
 
                         </div>
                     </div>
@@ -207,4 +207,39 @@ document.addEventListener('DOMContentLoaded', function () {
         //funciona porfissss
 }
 
+// Agrega un evento click a los botones de editar
+document.addEventListener('click', function (e) {
+    if (e.target && e.target.id === 'editar') {
+        console.log("aaaaaaaa")
+      // Obtén el ID del perfil que deseas editar
+      const perfilId = e.target.getAttribute('data-id');
+      console.log('Editar perfil con ID:', perfilId);
+  
+      // Muestra el modal
+      const modal = document.getElementById('modal');
+      modal.style.display = 'block';
+  
+      // Aquí debes cargar los datos del usuario en el formulario de edición
+      // Puedes hacer una solicitud GET para obtener los datos del usuario y llenar el formulario
+    }
+  });
+  
+  // Agrega un evento click al botón de cerrar el modal
+  document.addEventListener('click', function (e) {
+    if (e.target && e.target.className === 'close') {
+      const modal = document.getElementById('modal');
+      modal.style.display = 'none';
+    }
+  });
+  
+  // Agrega un evento submit al formulario de edición
+  document.getElementById('editarForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    // Aquí debes enviar una solicitud PUT o POST al servidor para guardar los cambios en el usuario
+    // Puedes usar la función fetch para esto
+    // Una vez que se guarden los cambios, puedes cerrar el modal
+    const modal = document.getElementById('modal');
+    modal.style.display = 'none';
+  });
+  
 
