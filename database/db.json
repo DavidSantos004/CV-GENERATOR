@@ -50,6 +50,23 @@
       "hobbies": "sapo",
       "skills": "que es eso?",
       "message": "el que todo lo quiere saber todo lo quiere contar"
+    },
+    {
+      "id": "12345678",
+      "name": "Ana Pérez",
+      "email": "ana.perez@email.com",
+      "telephone": "1234567890",
+      "subject": "Femenino",
+      "imageUrl": "https://thumbs.dreamstime.com/z/mujer-joven-desarrolladora-de-software-que-busca-c%C3%A1mara-en-el-lugar-trabajo-retrato-como-espacio-copias-274194816.jpg",
+      "profesion": "Desarrolladora de Software",
+      "estudios": "Licenciatura en Ciencias de la Computación",
+      "yearsExperience": "5",
+      "birthday": "1995-03-15",
+      "linkedin": "https://www.linkedin.com/in/anaperez",
+      "github": " https://github.com/anaperez",
+      "hobbies": " Senderismo, Fotografía, Leer",
+      "skills": "Desarrollo Web, Java, Python, Bases de Datos",
+      "message": " Ana Pérez es una apasionada desarrolladora de software con 5 años de experiencia en el desarrollo de aplicaciones web. Tiene una sólida formación en ciencias de la computación y ha trabajado en una variedad de proyectos, desde sitios web empresariales hasta aplicaciones móviles. Ana es conocida por su habilidad para resolver problemas y su capacidad para trabajar en equipo. Siempre está buscando formas de mejorar sus habilidades y aprender nuevas tecnologías.\nEstos datos son completamente ficticios y se proporcionan solo con fines de ejemplo. Puedes usarlos como base para llenar un generador de CV o personalizarlos según tus necesidades."
     }
   ]
 }
