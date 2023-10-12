@@ -1,13 +1,14 @@
 import {env} from "./config.js";     
 const apiUrl = `${env.ssl + env.hotsName}:${env.port}/perfiles`;
 const perfilesContainer = document.getElementById("section-formularios")
-const search =document.getElementById("search")
 const formito = document.querySelector(".formularito")
 const input = document.querySelector(".form-control");
-const boton= document.querySelector("#boton_bsuqueda");
+const eliminar = document.getElementById("eliminar")
+
 
 addEventListener("DOMContentLoaded", async () =>{
     formito.addEventListener('submit', async (e) => {
+        //Buscar usuario
         e.preventDefault()
           let valor = input.value;
           console.log(valor)
@@ -17,7 +18,6 @@ addEventListener("DOMContentLoaded", async () =>{
            
             if ((valor) === i.id) {
                 console.log("valor = id")
-                console.log(i.imageUrl)
                 perfilesContainer.innerHTML = `
                 <div class="container-fluid py-5" id="about">
                 <div class="container">
@@ -46,8 +46,8 @@ addEventListener("DOMContentLoaded", async () =>{
                                 <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">${i.email}</span></h6></div>
                                 <div class="col-sm-6 py-2"><h6>Linkedin: <span class="text-secondary"><a href="${i.linkedin} ">Dale un vistazo :)</a></span></h6></div>
                                 <div class="col-sm-6 py-2"><h6>Github: <span class="text-secondary"><a href="${i.github} ">Dale un vistazo :)</a></span></h6></div>
-                                <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                                <button type="button" class="btn btn-outline-danger">Editar</button>
+                                <button type="button" class="btn btn-outline-danger" data-id="${i.id}" id="eliminar">Eliminar</button>
+                                <button type="button" class="btn btn-outline-danger" data-id="${i.id}" id="eliminar">Editar</button>
     
                             </div>
                         </div>
@@ -91,8 +91,8 @@ addEventListener("DOMContentLoaded", async () =>{
                                 <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">${res[i].email}</span></h6></div>
                                 <div class="col-sm-6 py-2"><h6>Linkedin: <span class="text-secondary"><a href="${res[i].linkedin} ">Dale un vistazo :)</a></span></h6></div>
                                 <div class="col-sm-6 py-2"><h6>Github: <span class="text-secondary"><a href="${res[i].github} ">Dale un vistazo :)</a></span></h6></div>
-                                <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                                <button type="button" class="btn btn-outline-danger">Editar</button>
+                                <button type="button" class="btn btn-outline-danger"data-id="${perfil.id}" id="eliminar" >Eliminar</button>
+                                <button type="button" class="btn btn-outline-danger" data-id="${perfil.id}" id="editar">Editar</button>
     
                             </div>
                         </div>
@@ -112,10 +112,6 @@ addEventListener("DOMContentLoaded", async () =>{
           
     
 })
-
-//Buscar usuario
-
-
 
 //metodo GET
 fetch(apiUrl)
@@ -157,8 +153,8 @@ fetch(apiUrl)
                             <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">${perfil.email}</span></h6></div>
                             <div class="col-sm-6 py-2"><h6>Linkedin: <span class="text-secondary"><a href="${perfil.linkedin} ">Dale un vistazo :)</a></span></h6></div>
                             <div class="col-sm-6 py-2"><h6>Github: <span class="text-secondary"><a href="${perfil.github} ">Dale un vistazo :)</a></span></h6></div>
-                            <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                            <button type="button" class="btn btn-outline-danger">Editar</button>
+                            <button type="button" class="btn btn-outline-danger" data-id="${perfil.id}" id="eliminar">Eliminar</button>
+                            <button type="button" class="btn btn-outline-danger" data-id="${perfil.id}" id="eliminar">Editar</button>
 
                         </div>
                     </div>
@@ -174,4 +170,41 @@ fetch(apiUrl)
 .catch((error)=>{
     console.error("Error", error)
 })
+
+//metodo delete
+document.addEventListener('DOMContentLoaded', function () {
+    
+    document.addEventListener('click', function (e) {
+        if (e.target && e.target.id === 'eliminar') {
+            console.log("aaaaaaaa")
+          const perfilId = e.target.getAttribute('data-id');
+          console.log(perfilId)
+          eliminarPerfil(perfilId);
+        }
+      });
+    });
+    
+    function eliminarPerfil(perfilId) {
+
+        const url = `${apiUrl}/${perfilId}`
+        fetch(url, {
+            method:'DELETE',
+            headers:{
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response =>{
+            if (response.ok){
+                console.log(`Perfil con ID ${perfilId} eliminado exitosamente.`)
+            }
+            else{
+                console.error(`Error al eliminar el perfil con ID ${perfilId}.`);
+            }
+        })
+        .catch(error =>{
+            console.error('Error en la solicitud DELETE:', error);
+        })
+        //funciona porfissss
+}
+
 
