@@ -7077,6 +7077,7 @@ h6,
 /******* Modal Styles ********/
 
 .modal {
+  padding-top: 100px;
   display: none;
   position: fixed;
   z-index: 1;
@@ -7100,6 +7101,12 @@ h6,
   width: 80%;
 }
 
+
+
+#editarForm{
+  padding: 0;
+  margin:  40px;
+}
 /* Botón para cerrar el modal */
 .close {
   color: #aaa;
@@ -7115,6 +7122,11 @@ h6,
 }
 
 /* Media query para hacer el modal responsive */
+@media (max-width: 913px) {
+  .modal-content {
+      width: 90%;
+  }
+}
 @media (max-width: 768px) {
   .modal-content {
       width: 90%;
