@@ -248,7 +248,6 @@ document.addEventListener('click', function (e) {
         document.getElementById('image-url-input').value = usuario.imageUrl
         document.getElementById('profesion').value = usuario.profesion
         document.getElementById('estudios').value = usuario.estudios
-        console.log(usuario)
         document.getElementById('yearsExperience').value = usuario.yearsExperience
         document.getElementById('Birthday').value = usuario.birthday
         document.getElementById('linkedin').value = usuario.linkedin
@@ -281,6 +280,7 @@ document.addEventListener('click', function (e) {
         subject:document.getElementById('subject_input').value , 
         imageUrl:document.getElementById('image-url-input').value ,
         profesion:document.getElementById('profesion').value ,
+        estudios:document.getElementById('estudios').value ,
         yearsExperience:document.getElementById('yearsExperience').value ,
         birthday:document.getElementById('Birthday').value ,
         linkedin:document.getElementById('linkedin').value ,

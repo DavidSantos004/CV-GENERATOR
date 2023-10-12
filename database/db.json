@@ -5,17 +5,34 @@
       "name": "Ana Pérez",
       "email": "ana.perez@email.com",
       "telephone": "1234567890",
-      "subject": "Femenino",
+      "subject": "Masculino",
       "imageUrl": "https://thumbs.dreamstime.com/z/mujer-joven-desarrolladora-de-software-que-busca-c%C3%A1mara-en-el-lugar-trabajo-retrato-como-espacio-copias-274194816.jpg",
       "profesion": "Desarrolladora de Software",
       "estudios": "Licenciatura en Ciencias de la Computación",
-      "yearsExperience": "5",
-      "birthday": "1995-03-15",
+      "yearsExperience": "11",
+      "birthday": "2023-10-03",
       "linkedin": "https://www.linkedin.com/in/anaperez",
       "github": " https://github.com/anaperez",
       "hobbies": " Senderismo, Fotografía, Leer",
       "skills": "Desarrollo Web, Java, Python, Bases de Datos",
-      "message": " Ana Pérez es una apasionada desarrolladora de software con 5 años de experiencia en el desarrollo de aplicaciones web. Tiene una sólida formación en ciencias de la computación y ha trabajado en una variedad de proyectos, desde sitios web empresariales hasta aplicaciones móviles. Ana es conocida por su habilidad para resolver problemas y su capacidad para trabajar en equipo. Siempre está buscando formas de mejorar sus habilidades y aprender nuevas tecnologías.\nEstos datos son completamente ficticios y se proporcionan solo con fines de ejemplo. Puedes usarlos como base para llenar un generador de CV o personalizarlos según tus necesidades."
+      "message": "Ana Pérez es una apasionada desarrolladora de software con 5 años de experiencia en el desarrollo de aplicaciones web. Tiene una sólida formación en ciencias de la computación y ha trabajado en una variedad de proyectos, desde sitios web empresariales hasta aplicaciones móviles. Ana es conocida por su habilidad para resolver problemas y su capacidad para trabajar en equipo. Siempre está buscando formas de mejorar sus habilidades y aprender nuevas tecnologías.\\nEstos datos son completamente ficticios y se proporcionan solo con fines de ejemplo. Puedes usarlos como base para llenar un generador de CV o personalizarlos según tus necesidades."
+    },
+    {
+      "id": "1095300442",
+      "name": "David Andres Santos Mosquera",
+      "email": "ds0299646@gmail.com",
+      "telephone": "3163781431",
+      "subject": "Masculino",
+      "imageUrl": "https://intn24.lalr.co/cms/2023/10/10125525/Maluma-1.jpg?w=480",
+      "profesion": "Desarrollador de Software",
+      "estudios": "Licenciatura en Ciencias de la Computación, Mantenimiento en equipos electronicos industriales",
+      "yearsExperience": "12",
+      "birthday": "1985-09-23",
+      "linkedin": "https://www.linkedin.com/in/davidandressantosmosquera",
+      "github": "https://www.linkedin.com/in/DavidSantos004",
+      "hobbies": " Senderismo, Fotografía, Leer",
+      "skills": "Desarrollo Web, Java, Python, Bases de Datos",
+      "message": "Durante mi carrera profesional, he tenido la oportunidad de trabajar en diversos proyectos desafiantes que me han permitido desarrollar habilidades sólidas en el campo de la tecnología. Siempre he estado comprometido con la excelencia y la mejora constante, lo que me ha llevado a buscar soluciones innovadoras y a mantenerme al tanto de las últimas tendencias en desarrollo de software.\n\nSoy apasionado por el desarrollo web y he trabajado en la creación de aplicaciones web de alto rendimiento que brindan experiencias excepcionales a los usuarios. Mi experiencia abarca desde el diseño y la implementación de bases de datos eficientes hasta la optimización de la interfaz de usuario para lograr una navegación fluida."
     }
   ]
 }
