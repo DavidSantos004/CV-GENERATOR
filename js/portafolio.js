@@ -34,6 +34,9 @@ addEventListener("DOMContentLoaded", async () =>{
                         </div>
                         <div class="col-lg-7">
                             <h3 class="mb-4">${i.profesion}</h3>
+                        <h4 class="mb-4">ID de identificacion: <b>${i.id}</b></h4>
+                            
+                            
                             <p>${i.message}</p>
                             <div class="row mb-3">
                                 <div class="col-sm-6 py-2"><h6>Name: <span class="text-secondary">${i.name}</span></h6></div>
@@ -79,6 +82,7 @@ addEventListener("DOMContentLoaded", async () =>{
                         </div>
                         <div class="col-lg-7">
                             <h3 class="mb-4">${res[i].profesion}</h3>
+                        <h4 class="mb-4">ID de identificacion: <b>${res[i].id}</b></h4>
                             <p>${res[i].message}</p>
                             <div class="row mb-3">
                                 <div class="col-sm-6 py-2"><h6>Name: <span class="text-secondary">${res[i].name}</span></h6></div>
@@ -91,8 +95,8 @@ addEventListener("DOMContentLoaded", async () =>{
                                 <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">${res[i].email}</span></h6></div>
                                 <div class="col-sm-6 py-2"><h6>Linkedin: <span class="text-secondary"><a href="${res[i].linkedin} ">Dale un vistazo :)</a></span></h6></div>
                                 <div class="col-sm-6 py-2"><h6>Github: <span class="text-secondary"><a href="${res[i].github} ">Dale un vistazo :)</a></span></h6></div>
-                                <button type="button" class="btn btn-outline-danger"data-id="${perfil.id}" id="eliminar" >Eliminar</button>
-                                <button type="button" class="btn btn-outline-danger" data-id="${perfil.id}" id="editar">Editar</button>
+                                <button type="button" class="btn btn-outline-danger"data-id="${res.id}" id="eliminar" >Eliminar</button>
+                                <button type="button" class="btn btn-outline-danger" data-id="${res.id}" id="editar">Editar</button>
     
                             </div>
                         </div>
@@ -140,7 +144,10 @@ fetch(apiUrl)
                         <img class="img-fluid rounded w-100" src="${perfil.imageUrl}" alt="">
                     </div>
                     <div class="col-lg-7">
+                        
                         <h3 class="mb-4">${perfil.profesion}</h3>
+                        <h4 class="mb-4">ID de identificacion: <b>${perfil.id}</b></h4>
+
                         <p>${perfil.message}</p>
                         <div class="row mb-3">
                             <div class="col-sm-6 py-2"><h6>Name: <span class="text-secondary">${perfil.name}</span></h6></div>
